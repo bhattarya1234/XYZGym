@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xyz gym</title>
+  <style>
+          @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+          user-select: none;
+        margin: 0;
+        padding: 0;
+
+        background:linear-gradient(90deg,#000000,#4b0081,#3F87FB);
+     
+        color: #fff;
+        height:100%;
+        /*to disable all clicks using keyboards and mouse for right leaks*/
+         -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+        }
+
+        #cointainer{
+                      position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+        
+         /*   background:url('patterns.gif');*/
+            object-fit: contain;
+
+
+
+            background-image: 
+            
+              linear-gradient(to right, rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+            z-index: 0;
+            background-size:50px 50px;
+            animation:firsttime 1.6s;
+        }
+        @keyframes firsttime{
+          from{
+            
+            opacity: 0;
+            transform: translateY(-30vh);
+          }
+          to{
+                        opacity: 1;
+            transform: translateY(0vh);
+
+          }
+        }
+        .sticky-bar{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+
+  color: #121212;
+backdrop-filter: blur(20px);
+  text-align: center;
+  z-index: 1000;
+  height:8%;
+  cursor:pointer;
+        }
+        .icon-list {
+         margin-top: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  
+  cursor:pointer;
+  
+}
+
+.icon-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  
+}
+
+.icon-list .whiteicon {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s all ease-in-out;
+}
+.icon-list .whiteicon:hover {
+  transform: scale(1.2);
+  color:#00FFCC;
+  
+}
+
+.label {
+  margin-top: 5px;
+  font-size: 10px;
+    }
+
+        #title{
+          font-family: 'Orbitron', sans-serif;
+
+          font-size: 10vh;
+          display: flex;
+          justify-content: center;
+          color: #121212;
+position: relative;
+font-weight:900;
+top:70px;
+/*text-decoration: underline;
+text-decoration-color: #5EFFDC;*/
+margin: 10px;
+      text-shadow: -1px 1px 0 #41ba45,
+        1px 1px 0 #0f0,
+              1px 1px 0 #c63d2b,
+             1px -1px 0 #42afac,
+            -1px -1px 0 #c6c23f;
+                    background: rgba(255, 255, 255, 0);
+
+
+        }
+        #title::after{
+          position: absolute;
+                    content:"";
+
+left:0;
+bottom: 0;
+width:0%;
+/*background:linear-gradient(45deg,#91FFA7,#919CFF);*/
+background:linear-gradient(45deg,#02FFB3,#8002FF);
+border-radius: 11px;
+height:6px;
+transition:all ease 1s;
+animation:jaddu 2s linear infinite;
+        }
+        @keyframes jaddu{
+          0%{
+            width:0;
+           left:0;
+          }
+          50%{
+            width:100%;
+            left:0;
+          }
+          100%{
+            width:0%;
+            left:100%;
+          }
+        }
+               
+        #moto{
+                    font-size: 5vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #7BFFC2;
+
+          font-weight:90;
+
+          margin-top: 30px;
+          animation: motoview both;
+          animation-timeline: view(70% 5%);
+
+        }
+        @keyframes motoview{
+          from{
+            opacity: 0;
+
+            transform: translateY(20vh) scale(0.1);
+          }
+          to{
+            opacity: 1;
+
+            transform: translateY(0px) scale(1);
+
+          }
+        }
+        #mid {
+  display: inline-block;
+  
+  border-top: 2px solid cyan;
+  align-items: center;
+  text-align: center;
+  padding:5px;
+  color: rgba(101, 0, 255, 1);
+  background:rgba(66, 68, 90, 0);
+  border-radius: 40%;
+  font-size: 34px;
+margin-top: 10px;
+  position: sticky;
+  top: 25vh;
+  z-index: 17;
+  
+}
+    input{
+    
+
+      
+      border-radius:8px;
+      width:100%;
+      
+      height:7vh;
+
+      background:black;
+      color : aquamarine;
+     
+      justify-content:center;
+      text-align:center;
+align-items:center;
+      border:1px solid aquamarine;
+      box-shadow:0 0 20px blue,0 0 #0f0;
+      
+    }
+
+    form{
+      
+      border-radius: 11px;
+        text-shadow:0 0 10px #00fffb,0 0 #0081bc;
+     width:40vh;
+   height:35vh;
+   /*
+        box-shadow: -5px 5px 20px #264f68,
+    5px -5px 20px #4ea1d4;
+   */
+
+    z-index: 30;
+
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+      
+    }
+
+    #join {
+      padding: 0.8rem 2rem;
+
+            background:#20FFC5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 10px #20FFC5, 0 0 20px #20FFC5;
+            cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      color: black;
+      letter-spacing: 1px;
+      
+
+    }
+    #join:hover{
+      transform: scale(1.1);
+            box-shadow: 0 0 10px #20D3FF, 0 0 20px #20D3FF;
+background: #20D3FF;
+color:#F120FF;
+         
+    }
+    
+    button.submit{
+      
+      width:30%;
+
+   height:20%;
+   font-size:20px;              
+      background: linear-gradient(45deg, #1e90ff, #8a2be2);
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+      transition: all 0.3s ease-in-out;
+     /*
+      box-shadow: 0 0 3px 3px purple; /* Green glow inside and outside */
+      margin-top:1px;
+      margin:30px;
+
+      justify-content:center;
+      border-radius:5px;
+   border:none;
+      color: purple;
+    cursor: pointer;
+            
+    }
+    button.submit:hover{
+      
+   
+      font-size:20px;               color:black; 
+  
+      box-shadow: 0 0 25px rgba(30, 144, 255, 0.8), 0 0 35px rgba(138, 43, 226, 0.8);
+            margin-top:1px;
+      margin:30px;
+
+      transform: scale(1.1);
+      /*
+   box-shadow: 0 0 7px 7px #0f0, inset 0 0 14px 14px #0f0; /* Green glow inside and outside */
+     
+      
+    }
+
+   #para{
+
+      border-radius: 13px;
+
+            position: relative;
+
+            width:54vh;
+      height:clamp(30vh,40vh,60vh);
+
+     
+
+
+      background:black;
+      
+
+color:#0CD8FF;
+
+     overflow: hidden;
+                 margin-bottom:5vh;
+
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index:9;
+
+     animation: paraview;
+     animation-timeline:view();
+transition:.3s;
+
+    }
+
+    #para::before{
+      
+      position: absolute;
+      content: "";
+                  width:50%;
+      height:220%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image:linear-gradient(180deg,#8900FF,#00FF94);
+            z-index:-1;
+transition: 2s ease-in;
+            animation: swap 4s linear infinite;
+    }
+#para::after{
+            display: flex;
+
+            position: absolute;
+      content: "";
+          align-items: center;
+    justify-content: center;
+            text-align: center;
+
+      background:url('Motion.gif') no-repeat center/cover;
+  /*
+
+  background: linear-gradient(75deg,#8800FF,#0E00FF);
+*/
+      
+
+                inset:3px;
+                border-radius: 13px;
+
+                z-index:-1;
+}
+        @keyframes paraview{
+          from{
+            display: none;
+            transform: scale(1);
+
+            opacity: 0;
+            transform: translateY(80vh);
+
+          }
+          to{
+            display: flex;
+
+            transform: scale(5);
+            transform: translateX(0px);
+
+                       /* margin-top: 0vh;*/
+
+
+                        opacity: 2;
+
+          }
+        }
+    @keyframes swap{
+      from{
+       transform:  rotate(0deg);
+      }
+
+            to {
+        transform: rotate(360deg);
+      }
+    }
+     .heading{
+      font-size: 2em;
+      color:#0CFFD8;
+    font-weight: 100;
+      margin:2vh;
+    }
+    p{
+      margin:1vh;
+
+      color:#CB00FF;
+
+      font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+    }
+    #cointainer{
+      display: static;
+      height:100%;
+      position: relative;
+    }
+    #design{
+      font-size: 3em;
+
+     position: absolute;
+     left:5px;
+     top:3.5vh;
+margin-right:0px;
+      transform: rotate(335deg);
+      animation: fade 2s linear infinite;
+    }
+    @keyframes fade{
+      from{
+        opacity: 0.6;
+        color:#8400FF;
+
+      }
+
+      to{
+                opacity: 3;
+                color:#8083cf;
+
+      }
+    }
+    footer{
+      color:#FF0000;
+    }
+    #para:hover{
+      transform: scale(1.1);
+      box-shadow: 0 0 5px 2px darkgray;
+    }
+    #message {
+      
+  --mask: radial-gradient(40px at 40px 40px,#0000 98%,#000) -40px -40px;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+
+                  position: absolute;
+
+            width:400px;
+      height:340px;
+backdrop-filter: blur(10px);
+     overflow: hidden;
+     /*
+background: rgba(255, 255, 255, 0.2);*/
+  /*background: rgba(0, 0, 0, 0.8);*/
+  background: rgba(255, 255, 255, 0);
+
+      padding: 2px;
+
+      border-radius: 11px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+transition: all 1s ease;
+     
+
+            display:none;
+
+    align-items: center;
+    justify-content: center;
+
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+z-index: 1000;
+animation: 1s upwards linear;
+    }
+    @keyframes upwards {
+  0% {
+    top: -50px;
+  
+  }
+  50% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  70% {
+    top: 70%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  100%{
+        top: 50%;
+        left:50%;
+    transform: translate(-50%, -50%);
+   
+  }
+}
+
+    #cover,#restart{
+      position: absolute;
+      font-size: 1em;
+      border-radius: 14px;
+      
+background: #779BA7;
+
+                  padding: 0.8rem 2rem;
+            
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+      
+      border: none;
+      color: black;
+      letter-spacing: 1px;
+
+    }
+    #cover{ top: 0; 
+      
+    }
+    #restart{
+     
+      bottom:0;}
+    #liquid{
+      position: absolute;
+      top: -60px;
+ left: -50px;
+ width: 150%;
+ height: 200%;
+ background: #4973ff;
+  transition: 0.5s;
+
+    }
+    #liquid::before,#liquid::after
+{
+      position: absolute;
+      content:"";
+      background: linear-gradient(46deg,#4BFFD0,#4BB4FF);
+      width:200%;
+      height:200%;
+      transform: translate(-25%,-75%);
+
+     top:0;
+      left:0;
+      border-radius:45%;
+     
+    }
+    #liquid::after {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    box-shadow: 0 0 10px 5px #7293ff, inset 0 0 5px #7293ff;
+    animation: float_water 5s linear infinite;
+    opacity: 0.8;
+}
+
+#liquid::before {
+    border-radius: 40%;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5),
+        inset 0 0 5px rgba(26, 26, 26, 0.5);
+    background: rgba(26, 26, 26, 0.5);
+
+    animation: float_water 7s linear infinite;
+}
+    @keyframes float_water{
+       0% {
+    transform: translate(-25%, -75%) rotate(0deg);
+  }
+  100% {
+        transform: translate(-25%, -75%) 
+     rotate(360deg);
+  }
+    }
+  #liquid:hover{
+    
+    
+    top:-100%;
+    
+  }
+    img{
+      position: absolute ;
+left:0;
+align-items: center;
+
+    background:3px solid 
+    aquamarine;
+  border-radius: 50%;
+padding:0px;
+      border:2px solid aquamarine;
+  
+  }
+  .keeptop{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  ul.nav{
+    display:flex;
+    color:black;
+    background: #ac53ec;
+justify-content:end;
+gap:5vh;
+align-items: center;
+  
+  padding:10px 0;
+  height: 13vh;
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 20;
+    
+    border-radius: 25px;
+    /*
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15), inset -5px -5px 15px rgba(255, 255, 255, 0.15), 5px 5px 15px rgba(0, 0, 0, 0.15), -5px -5px 15px rgba(255, 255, 255, 0.15);
+    
+    background:#5391FF;
+
+       background: transparent;
+*/
+           backdrop-filter: blur(21px);
+
+  background: rgba(98, 69, 255, 0.2);
+
+  }
+    
+  .email-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+hr {
+
+  border-radius:3px;
+  background:cyan;
+}
+    .dropdown-content {
+      
+      display: none;
+      
+      position: absolute;
+      right:
+    0.6%;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 15;
+      border-radius: 7px;
+             background: rgba(255, 255, 255, 0);
+       transition: opacity 1s ease-in-out, visibility 0s 1s;
+transition-delay: 4s;
+       backdrop-filter: blur(11px);
+       background: transparent;
+      
+    }
+
+    .dropdown-content a {
+      color:white;
+
+      text-decoration: none;
+      display: block;
+      border-radius: 5px;
+      
+      border: 2px solid black;
+
+
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+    #group{
+      display: flex;
+
+    }
+    #members{
+      display: flex;
+      position: relative;
+      height:20vh;
+      width: 90%;
+      justify-content:center;
+align-items: center;
+      
+    }
+    .numbers{
+      position: absolute;
+      top:0;
+      color:#52299C;
+      font-size: 2em;
+      font-weight: 500;
+      text-shadow:0 0 30px #000000,0 0 #0081bc;
+      
+
+    }
+    .level{
+      position: absolute;
+      bottom: 0;
+      color:#00FF1A;
+      letter-spacing: 1.4px;
+
+    }
+    #imgbx{
+      background: #FFFFFF00;
+     
+
+  width:30vh;
+  height: 30vh;
+
+    }
+#rotatebox{
+  position: relative;
+  display: flex;
+        justify-content: center;
+align-items: center;
+      justify-items: center;
+  width:30vh;
+  height: 30vh;
+  background-image:url('R.png');
+     background-size: cover; background-position: center;
+     animation:rotateview .6s linear;
+     animation-timeline:view();
+     transition: 0.1s;
+
+}
+@keyframes rotateview{
+  from{
+    transform: rotate(0deg);
+}
+to{
+  transform: rotate(360deg);
+
+}
+}
+          </style>
+
+</head>
+
+<body id="main" oncontextmenu="return false;">
+
+  <div id="cointainer">
+   <div class="keeptop">
+     
+
+   </div>
+
+    <br><br><br><br><br>
+
+<div id="title">XYZ GYM</div>
+<br><br><br><br>
+<center>
+  <div id="imgbx">
+    <div id="rotatebox"></div>
+
+  </div>
+    <ul class="nav" style="background-image: url('lgo2.jpg'); background-size: cover; background-position: center;">
+  <img src="download.webp" alt="logo" 
+  height="80" width="80">
+
+  <a href=""> <i class="fa-brands fa-android" style="font-size:25px; color: white;"></i></a>
+  
+  <a href="form.html"><i class="fa-solid fa-user-plus" style="font-size:25px; color:white;"></i> </a>
+  <div class="dropdown"><i class="fa-solid fa-bars" style="font-size:25px; color:white;"></i>
+  
+    <div class="dropdown-content">
+      <a href="about.html">About</a>
+      <a href="#">Activities</a>
+      <a href="#">Form</a>
+      <a href="#">Sign in</a>
+      <a href="#">Follow us</a>
+      
+      <a href="feedbackrl.html"> Courses</a>
+      
+      <a href="feedback.html">Feedback</a>
+    </div>
+   
+</ul>
+</center>
+
+<div id="moto">Transform your body,
+Elevate your mind</div>
+<br><br><br><center>
+<button id="join">JOIN NOW</button>
+<br>
+
+
+</center>
+          <div id="mid"><i class="fa-solid fa-user"></i></div>
+
+    <center>
+      
+              <form>
+
+     <input type="email" placeholder="Username" id="usr">
+      <input type="tel" placeholder="phone number" style="width:100%;" id="phone" >
+            <button  
+       class="submit"
+        onclick="event.preventDefault();">
+        <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+
+    
+
+    
+    
+        <hr size=5 width=70%>
+        <div class="paraback">
+<div id="para">
+<i class="fa-solid fa-poo-bolt fa-beat-fade fa-dumbbell fa-2xl" id="design"></i>
+
+  <h1 class="heading">
+    
+    State-of-the-Art Equipment
+  </h1>
+  <p>
+  Experience fitness with our cutting-edge machines and free weights</p>
+</div></div>
+
+        <div class="paraback">
+<div id="para">
+  <i class="fa-solid fa-book-open" id="design"></i>
+  <h1 class="heading">
+    Expert Trainers
+
+  </h1>
+  <p>Get personalized guidance from our certified fitness professionals.</p>
+</div>
+</div>
+
+        <div class="paraback">
+
+<div id="para">
+  <i class="fa-solid fa-chalkboard-user"id="design"></i>
+  <h1 class="heading">Diverse Classes
+
+</h1>
+                <p>Join our variety of group classes, from yoga to high-intensity training.</p>
+
+</div></div>
+
+        <div class="paraback">
+
+<div id="para">
+ <i class="fa-solid fa-clock fa-2xl" id="design"></i>
+ <h1 class="heading">24/7 Access</h1>
+ <p>We understand your busy schedule, so we offer 24/7 access to our gym. </p>
+</div></div>
+
+        <div class="paraback">
+<div id="para">
+
+ <i class="fa-solid fa-apple-alt fa-2xl"id="design"></i>
+ <h1 class="heading">Nutrition Guidance</h1>
+ <p>Our fitness programs are complemented by expert nutrition advice to help fuel your workouts and recovery</p>
+</div>
+ </div>
+
+        <div class="paraback">
+
+<div id="para">
+
+ <i class="fa-solid fa-crown fa-2xl" id="design"></i>
+ <h1 class="heading">Premium Membership</h1>
+ <p>Get exclusive access to special programs, discounts on supplements for personal training session.</p>
+ </div>
+ </div>
+<br>
+<div id="group">
+  
+<div id="members">
+  <p class="numbers">500+</p>
+  <p class="level">Active members</p>
+</div>
+<div id="members">
+  <p class="numbers">50+</p>
+  <p class="level">Staffs</p>
+</div>
+<div id="members">
+  <p class="numbers">99%</p>
+  <p class="level">Achievements</p>
+</div></div>
+
+<br>
+    <a href="mailto:example@email.com?subject=Hello&body=Your message here" class="email-button">Email
+ us    </a>
+<br><br>
+<hr size=5
+
+width=70%
+style="
+background: cyan;
+border:none;
+">
+ <br><br>
+  <footer>
+   &copy; 2025 XYZ Gym.All rights reserved.
+
+ </footer><br><br>
+<br><br><br>
+              <div class="sticky-bar">
+                
+  <ul class="icon-list">
+    <li>
+      <a href="index.html" class="whiteicon">
+        <i class="fa-solid fa-house"></i>
+        <span class="label">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="gallery.html" class="whiteicon">
+        <i class="fa-regular fa-image"></i>
+        <span class="label">Gallery</span>
+      </a>
+    </li>
+    <li>
+      <a href="about.html" class="whiteicon">
+        <
+        <span class="label">About</span>
+      </a>
+
+       
+    </li>
+    <li>
+      <a href="#demo" class="whiteicon" onclick="console.log('Clicked!'); document.getElementById('location').style.display='block'">
+        <i class="fa-solid fa-location-dot"></i>
+        <span class="label"
+          >Location</span>
+      </a>
+    </li>
+    <li>
+      <a href="feedback.html" class="whiteicon">
+        <i class="fa-solid fa-comment"></i>
+        <span class="label">Feedback</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="whiteicon">
+        <i class="fa-solid fa-address-book"></i>
+        <span class="label">Contact</span>
+      </a>
+    </li>
+  </ul>
+            </div>
+
+<button class="email"></button>
+</div>
+
+
+<div id="message">
+
+  
+  <div id="liquid"></div>
+
+<span id="cover"><i> 
+  <h2>
+    <center>
+      Step into the future of fitness at XYZ Gym!
+
+    </center>
+  </h2>
+
+</i>
+</span>
+<button id="restart">BACK</button>
+
+</div>
+
+
+</body>
+<script>
+
+confirm("Uploading new gains at XYZ Gym, or are you already part of the system?");
+var join= document.getElementById('join');
+var message= document.getElementById('message');
+var cointainer= document.getElementById('cointainer');
+var button= document.getElementById('restart');
+var main= document.getElementById('main');
+
+join.addEventListener("click",
+function(){
+    message.style.display='flex';
+cointainer.style.display='none';
+main.style.background="url('patterns.gif')";
+
+}
+);
+button.addEventListener("click",
+    function() {
+      cointainer.style.display='';
+      message.style.display='none';
+main.style.background="linear-gradient(90deg,#000000,#4b0081,#3F87FB)";
+
+//linear-gradient(45deg,#07215D,#000000)"
+
+
+});
+</script>
+
+</html>
